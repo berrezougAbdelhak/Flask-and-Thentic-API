@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_restful import Api
-from ressources.userResource import clientResource
+from ressources.userResource import userResource
 from models import users
+from models import nft
 app=Flask(__name__)
 
 # app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///data.db"
@@ -17,7 +18,7 @@ def create_tables():
     db.create_all()
 
 # api.add_resource(clientResource,"/client")
-api.add_resource(clientResource,"/item/<string:name>") 
+api.add_resource(userResource,"/users/<string:address>") 
 if __name__=="__main__":
     from db import db 
     db.init_app(app)
