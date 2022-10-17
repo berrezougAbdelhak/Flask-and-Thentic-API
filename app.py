@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_restful import Api
-from ressources.clientResource import clientResource
-from models import clients
+from ressources.userResource import clientResource
+from models import users
 app=Flask(__name__)
 
 # app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///data.db"
-app.config["SQLALCHEMY_DATABASE_URI"]="postgresql://postgres:08087898@localhost:5432/DB"
+app.config["SQLALCHEMY_DATABASE_URI"]="postgresql://postgres:08087898@localhost:5432/thenticDB"
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 app.secret_key="jose"

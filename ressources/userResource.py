@@ -1,3 +1,3 @@
 from flask_restful import Resource
-class clientResource(Resource):
+class userResource(Resource):
     pass
