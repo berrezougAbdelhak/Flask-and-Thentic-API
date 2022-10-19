@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from ressources.userResource import userResource
+from ressources.userResource import userRegister
 from models import users
 from models import nft
 app=Flask(__name__)
@@ -18,7 +18,7 @@ def create_tables():
     db.create_all()
 
 # api.add_resource(clientResource,"/client")
-api.add_resource(userResource,"/users/<string:address>") 
+api.add_resource(userRegister,"/register") 
 if __name__=="__main__":
     from db import db 
     db.init_app(app)
